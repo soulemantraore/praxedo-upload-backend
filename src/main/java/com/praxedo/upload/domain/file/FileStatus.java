@@ -15,13 +15,13 @@ public enum FileStatus {
     SCAN_FAILED,
     EXPIRED;
 
-    private static final Map<FileStatus, Set<FileStatus>> ALLOWED = Map.of(
-        PENDING, Set.of(SCANNING, EXPIRED),
-        SCANNING, Set.of(CLEAN, INFECTED, SCAN_FAILED),
-        SCAN_FAILED, Set.of(SCANNING),
-        CLEAN, Set.of(),
-        INFECTED, Set.of(),
-        EXPIRED, Set.of()
+    private static final Map<FileStatus, Set<FileStatus>> ALLOWED = Map.ofEntries(
+        Map.entry(PENDING, Set.of(SCANNING, EXPIRED)),
+        Map.entry(SCANNING, Set.of(CLEAN, INFECTED, SCAN_FAILED)),
+        Map.entry(SCAN_FAILED, Set.of(SCANNING)),
+        Map.entry(CLEAN, Set.of()),
+        Map.entry(INFECTED, Set.of()),
+        Map.entry(EXPIRED, Set.of())
     );
 
     public boolean canTransitionTo(FileStatus target) {
