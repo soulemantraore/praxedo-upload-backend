@@ -2,6 +2,8 @@ package com.praxedo.upload.domain.file;
 
 import com.praxedo.upload.domain.file.exceptions.IllegalFileTransitionException;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.experimental.Accessors;
 
 import java.time.Instant;
 import java.util.Objects;
@@ -12,8 +14,10 @@ import java.util.UUID;
  * POJO (Lombok = build-time uniquement, aucune dependance runtime) : la persistance a son propre modele (adapter JPA).
  * Les transitions passent toutes par {@link #transitionTo} qui applique la machine a etats.
  * La construction se fait via le {@code @Builder}, encapsule par les fabriques {@link #pending} / {@link #rehydrate}
- * qui garantissent des etats initiaux coherents.
+ * qui garantissent des etats initiaux coherents. Accesseurs "record-like" generes par Lombok ({@code id()}, {@code status()}, ...).
  */
+@Getter
+@Accessors(fluent = true)
 public class FileRecord {
 
     private final UUID id;
@@ -125,18 +129,4 @@ public class FileRecord {
     public boolean isDownloadable() {
         return status.isDownloadable();
     }
-
-    public UUID id() { return id; }
-    public UUID ownerId() { return ownerId; }
-    public UUID batchId() { return batchId; }
-    public String filename() { return filename; }
-    public String contentType() { return contentType; }
-    public long sizeBytes() { return sizeBytes; }
-    public String storageKey() { return storageKey; }
-    public FileStatus status() { return status; }
-    public ScanVerdict scanVerdict() { return scanVerdict; }
-    public int scanAttempts() { return scanAttempts; }
-    public Instant createdAt() { return createdAt; }
-    public Instant updatedAt() { return updatedAt; }
-    public Instant scannedAt() { return scannedAt; }
 }
