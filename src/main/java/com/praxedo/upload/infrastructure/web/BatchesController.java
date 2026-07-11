@@ -6,7 +6,7 @@ import com.praxedo.upload.application.dto.FileViews.BatchView;
 import com.praxedo.upload.application.dto.UploadCommands.BatchRegistration;
 import com.praxedo.upload.application.dto.UploadCommands.RegisterBatchCommand;
 import com.praxedo.upload.application.dto.UploadCommands.RegisterUploadCommand;
-import com.praxedo.upload.infrastructure.web.dto.RegisterBatchRequest;
+import com.praxedo.upload.infrastructure.web.dto.UploadRequests.RegisterBatchRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
