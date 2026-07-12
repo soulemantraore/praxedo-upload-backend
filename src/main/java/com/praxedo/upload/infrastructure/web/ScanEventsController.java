@@ -34,8 +34,8 @@ import java.util.UUID;
 public class ScanEventsController {
 
     private static final Logger log = LoggerFactory.getLogger(ScanEventsController.class);
-    // Valeur imposee par GCS : eventType envoye lorsqu'un upload d'objet est finalise (termine).
-    private static final String GCS_UPLOAD_FINALIZED_EVENT = "OBJECT_FINALIZE";
+    // eventType envoye par GCS lorsqu'un upload d'objet est finalise (valeur imposee par GCS).
+    private static final String OBJECT_FINALIZE = "OBJECT_FINALIZE";
 
     private final FileScanService scanService;
     private final FileMetadataRepository fileRepository;
@@ -64,7 +64,7 @@ public class ScanEventsController {
         Map<String, String> attributes = message.attributes();
         if (attributes != null && attributes.get("objectId") != null) {
             String eventType = attributes.get("eventType");
-            if (eventType != null && !GCS_UPLOAD_FINALIZED_EVENT.equals(eventType)) {
+            if (eventType != null && !OBJECT_FINALIZE.equals(eventType)) {
                 log.debug("evenement GCS ignore : {}", eventType);
                 return null;
             }
