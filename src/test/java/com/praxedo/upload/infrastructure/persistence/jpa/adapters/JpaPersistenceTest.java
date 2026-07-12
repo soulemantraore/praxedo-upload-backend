@@ -1,4 +1,4 @@
-package com.praxedo.upload.infrastructure.persistence.jpa.implementations;
+package com.praxedo.upload.infrastructure.persistence.jpa.adapters;
 
 import com.praxedo.upload.domain.client.ApiClient;
 import com.praxedo.upload.domain.file.FileQuery;
@@ -7,8 +7,8 @@ import com.praxedo.upload.domain.file.FileStatus;
 import com.praxedo.upload.domain.file.PageResult;
 import com.praxedo.upload.domain.file.ScanVerdict;
 import com.praxedo.upload.domain.file.StatusCounts;
-import com.praxedo.upload.infrastructure.persistence.jpa.interfaces.ApiClientJpaRepository;
-import com.praxedo.upload.infrastructure.persistence.jpa.interfaces.FileJpaRepository;
+import com.praxedo.upload.infrastructure.persistence.jpa.repositories.ApiClientJpaRepository;
+import com.praxedo.upload.infrastructure.persistence.jpa.repositories.FileJpaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
