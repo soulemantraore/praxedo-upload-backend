@@ -1,4 +1,4 @@
-package com.praxedo.upload.infrastructure.persistence.jpa;
+package com.praxedo.upload.infrastructure.persistence.jpa.implementations;
 
 import com.praxedo.upload.domain.file.FileQuery;
 import com.praxedo.upload.domain.file.FileRecord;
@@ -6,6 +6,8 @@ import com.praxedo.upload.domain.file.FileStatus;
 import com.praxedo.upload.domain.file.PageResult;
 import com.praxedo.upload.domain.file.StatusCounts;
 import com.praxedo.upload.domain.port.FileMetadataRepository;
+import com.praxedo.upload.infrastructure.persistence.jpa.entities.FileEntity;
+import com.praxedo.upload.infrastructure.persistence.jpa.interfaces.FileJpaRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,7 +1,9 @@
-package com.praxedo.upload.infrastructure.persistence.jpa;
+package com.praxedo.upload.infrastructure.persistence.jpa.implementations;
 
 import com.praxedo.upload.domain.client.ApiClient;
 import com.praxedo.upload.domain.port.ApiClientRepository;
+import com.praxedo.upload.infrastructure.persistence.jpa.entities.ApiClientEntity;
+import com.praxedo.upload.infrastructure.persistence.jpa.interfaces.ApiClientJpaRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.praxedo.upload.infrastructure.persistence.jpa;
+package com.praxedo.upload.infrastructure.persistence.jpa.entities;
 
 import com.praxedo.upload.domain.file.FileRecord;
 import com.praxedo.upload.domain.file.FileStatus;
@@ -56,7 +56,7 @@ public class FileEntity {
     protected FileEntity() {
     }
 
-    static FileEntity fromDomain(FileRecord f) {
+    public static FileEntity fromDomain(FileRecord f) {
         FileEntity e = new FileEntity();
         e.id = f.id();
         e.ownerId = f.ownerId();
@@ -79,7 +79,7 @@ public class FileEntity {
         return e;
     }
 
-    FileRecord toDomain() {
+    public FileRecord toDomain() {
         ScanVerdict verdict = scanEngine == null ? null
             : new ScanVerdict(Boolean.TRUE.equals(scanInfected), scanEngine, threatName, scannedAt);
         return FileRecord.rehydrate(id, ownerId, batchId, filename, contentType, sizeBytes, storageKey,

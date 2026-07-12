@@ -1,6 +1,7 @@
-package com.praxedo.upload.infrastructure.persistence.jpa;
+package com.praxedo.upload.infrastructure.persistence.jpa.interfaces;
 
 import com.praxedo.upload.domain.file.FileStatus;
+import com.praxedo.upload.infrastructure.persistence.jpa.entities.FileEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

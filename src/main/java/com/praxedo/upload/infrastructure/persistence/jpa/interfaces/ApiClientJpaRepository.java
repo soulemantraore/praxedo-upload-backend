@@ -1,5 +1,6 @@
-package com.praxedo.upload.infrastructure.persistence.jpa;
+package com.praxedo.upload.infrastructure.persistence.jpa.interfaces;
 
+import com.praxedo.upload.infrastructure.persistence.jpa.entities.ApiClientEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.praxedo.upload.infrastructure.persistence.jpa;
+package com.praxedo.upload.infrastructure.persistence.jpa.entities;
 
 import com.praxedo.upload.domain.client.ApiClient;
 import jakarta.persistence.Column;
@@ -28,7 +28,7 @@ public class ApiClientEntity {
     protected ApiClientEntity() {
     }
 
-    static ApiClientEntity fromDomain(ApiClient c) {
+    public static ApiClientEntity fromDomain(ApiClient c) {
         ApiClientEntity e = new ApiClientEntity();
         e.id = c.id();
         e.name = c.name();
@@ -38,7 +38,7 @@ public class ApiClientEntity {
         return e;
     }
 
-    ApiClient toDomain() {
+    public ApiClient toDomain() {
         return new ApiClient(id, name, apiKeyHash, active, createdAt);
     }
 }
